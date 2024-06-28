@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">>
+<head <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>Super Task Manager</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+    </div>
     <div class="container">
-        <h1>To Do List</h1>
+        <header>
+            <h1>Super Task Manager</h1>
+            <div id="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
         <form id="todo-form">
             <input type="text" id="todo-input" placeholder="Add a new task" required>
             <select id="todo-category">
                 <option value="personal">Personal</option>
                 <option value="work">Work</option>
                 <option value="shopping">Shopping</option>
+                <option value="health">Health</option>
             </select>
             <input type="date" id="todo-date">
+            <input type="time" id="todo-time">
             <button type="submit">Add Task</button>
         </form>
         <div id="todo-filters">
@@ -26,6 +41,10 @@
             <button id="filter-completed">Completed</button>
         </div>
         <ul id="todo-list"></ul>
+        <div id="todo-stats">
+            <span id="tasks-count">0 tasks</span>
+            <button id="clear-completed">Clear Completed</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
