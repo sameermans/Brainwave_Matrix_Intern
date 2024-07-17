@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce </title>
+    <title>E-Commerce Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>E-Commerce </h1>
-        <input type="text" id="search" placeholder="Search products...">
+        <h1>E-Commerce Store</h1>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search products...">
+            <button id="search-btn">Search</button>
+        </div>
         <div id="cart-icon">🛒 <span id="cart-count">0</span></div>
     </header>
 
     <main>
-        <section id="filter">
-            <h2>Filter by Category</h2>
-            <select id="category-filter">
-                <option value="all">All</option>
-                <option value="electronics">Electronics</option>
-                <option value="fashion">Fashion</option>
-                <option value="home">Home</option>
-            </select>
-        </section>
+        <aside id="filters">
+            <h2>Filters</h2>
+            <div>
+                <h3>Category</h3>
+                <select id="category-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+            <div>
+                <h3>Price Range</h3>
+                <input type="number" id="min-price" placeholder="Min">
+                <input type="number" id="max-price" placeholder="Max">
+                <button id="apply-price-filter">Apply</button>
+            </div>
+        </aside>
 
         <section id="products">
             <h2>Products</h2>
             <div id="product-list"></div>
+            <div id="pagination"></div>
         </section>
 
         <section id="cart">
@@ -36,20 +46,22 @@
             <button id="checkout-btn">Proceed to Checkout</button>
         </section>
 
-        <section id="checkout" style="display: none;">
-            <h2>Checkout</h2>
-            <form id="checkout-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
+        <section id="checkout" class="modal">
+            <div class="modal-content">
+                <h2>Checkout</h2>
+                <form id="checkout-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
 
-                <label for="address">Address:</label>
-                <textarea id="address" required></textarea>
+                    <label for="address">Address:</label>
+                    <textarea id="address" required></textarea>
 
-                <button type="submit">Place Order</button>
-            </form>
+                    <button type="submit">Place Order</button>
+                </form>
+            </div>
         </section>
     </main>
 
